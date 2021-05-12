@@ -25,6 +25,8 @@ public class ParcelTest {
 
     @Test
     public void canSetLength() {
+        smallParcel.setLength(5);
+        assertEquals(5,smallParcel.getLength());
     }
 
     @Test
