@@ -31,6 +31,7 @@ public class ParcelTest {
 
     @Test
     public void hasWidth() {
+        assertEquals(9, smallParcel.getWidth());
     }
 
     @Test
