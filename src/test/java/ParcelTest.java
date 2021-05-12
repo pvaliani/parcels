@@ -42,26 +42,36 @@ public class ParcelTest {
 
     @Test
     public void hasHeight() {
-//        
+        assertEquals(9, smallParcel.getHeight());
+//
     }
 
     @Test
     public void canSetHeight() {
+        smallParcel.setHeight(5);
+        assertEquals(5, smallParcel.getHeight());
     }
 
     @Test
     public void getType() {
+        assertEquals("small", smallParcel.getType());
     }
 
     @Test
     public void setType() {
+        smallParcel.setType("small");
+        assertEquals("small", smallParcel.getType());
+
     }
 
     @Test
     public void getCost() {
+        assertEquals(3, smallParcel.getCost());
     }
 
     @Test
     public void setCost() {
+        smallParcel.setCost(3);
+        assertEquals(3, smallParcel.getCost());
     }
 }
