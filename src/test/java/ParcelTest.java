@@ -36,6 +36,8 @@ public class ParcelTest {
 
     @Test
     public void canSetWidth() {
+        smallParcel.setWidth(5);
+        assertEquals(5, smallParcel.getWidth());
     }
 
     @Test
