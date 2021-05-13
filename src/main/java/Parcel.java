@@ -83,6 +83,8 @@ public class Parcel {
         else this.type = "XL";
     }
 
+//   ----------- IMPLEMENTATION STAGE 1 COMPLETE -----------
+
 
 
 //

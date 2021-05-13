@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Order {
 
     private ArrayList<Parcel> parcels;
+    private Boolean speedyShipping;
 
-    public Order() {
+
+    public Order(Boolean speedyShipping) {
         this.parcels = new ArrayList<>();
+        this.speedyShipping = false;
     }
 
     public ArrayList<Parcel> getParcels(){
@@ -32,9 +35,17 @@ public class Order {
         int sum = parcels.stream()
                 .mapToInt(a -> a.getCost())
                 .sum();
-        System.out.println(sum);
-        return sum;
-    }
+        if (speedyShipping == true){
+            System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);
+            System.out.println("The total order cost in $ is:" + sum*2);
+            return sum * 2;
+        }
+
+        else if (speedyShipping == false){
+            System.out.println("The total order cost in $ is:" + sum);
+        }
+            return sum;
+        }
 
     public void displayOrderContents(ArrayList<Parcel> parcels){
         System.out.println("CURRENT ORDER CONTENTS:");
@@ -42,6 +53,18 @@ public class Order {
             System.out.println("Parcel Type - " + parcel.getType() + ", Parcel cost $" + parcel.getCost());
         });
     }
+
+//    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------
+
+    public Boolean getSpeedyShipping() {
+        return speedyShipping;
+    }
+
+    public void setSpeedyShipping(Boolean speedyShipping) {
+        this.speedyShipping = speedyShipping;
+    }
+
+
 
 
 }

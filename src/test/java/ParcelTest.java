@@ -97,4 +97,6 @@ public class ParcelTest {
         unassignedParcel.setParcelTypeByCost(25);
         assertEquals("XL", unassignedParcel.getType());
     }
+
+//    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------
 }

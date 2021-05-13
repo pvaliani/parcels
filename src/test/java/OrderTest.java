@@ -10,10 +10,11 @@ public class OrderTest {
     Parcel mediumParcel;
     Parcel largeParcel;
     Parcel XLParcel;
+    private Boolean speedyShipping;
 
     @Before
     public void before(){
-        myOrder = new Order();
+        myOrder = new Order(speedyShipping);
         smallParcel = new Parcel(9,9,9,"small",3);
         mediumParcel = new Parcel(49,49,49,"medium",8);
         largeParcel = new Parcel(99,99,99,"large",15);
@@ -75,6 +76,26 @@ public class OrderTest {
 
     }
 
+//    ----------- IMPLEMENTATION STAGE 1 COMPLETE --------------
 
+    @Test
+    public void setSpeedyShippingTrueDoublesOrder(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.setSpeedyShipping(true);
+        assertEquals(52, myOrder.calculateCostOfOrder(myOrder.getParcels()));
+
+    }
+
+    @Test
+    public void canDisplayOrderContentsSpeedyShippingTrue(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.setSpeedyShipping(true);
+        myOrder.displayOrderContents(myOrder.getParcels());
+
+    }
 
 }
