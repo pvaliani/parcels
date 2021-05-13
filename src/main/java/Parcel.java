@@ -1,12 +1,12 @@
 public class Parcel {
 
-    private int length;
-    private int width;
-    private int height;
+    private double length;
+    private double width;
+    private double height;
     private String type;
-    private int cost;
+    private double cost;
 
-    public Parcel(int length, int width, int height, String type, int cost) {
+    public Parcel(double length, double width, double height, String type, double cost) {
         this.length = length;
         this.width = width;
         this.height = height;
@@ -16,27 +16,27 @@ public class Parcel {
 
     //  Getters and setters
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(double length) {
         this.length = length;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
@@ -48,15 +48,15 @@ public class Parcel {
         this.type = type;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
-    public void setParcelCostBySize(int length, int width, int height){
+    public void setParcelCostBySize(double length, double width, double height){
         if (length < 10 && width < 10  && height < 10){
             this.cost = 3;
         }
@@ -70,7 +70,7 @@ public class Parcel {
             this.cost = 25;
     }
 
-    public void setParcelTypeByCost(int cost){
+    public void setParcelTypeByCost(double cost){
         if (cost <= 3){
             this.type = "small";
         }

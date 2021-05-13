@@ -31,9 +31,9 @@ public class Order {
         this.parcels.clear();
     }
 //    change a to parcel
-    public int calculateCostOfOrder(){
-        int sum = this.parcels.stream()
-                .mapToInt(parcel -> parcel.getCost())
+    public double calculateCostOfOrder(){
+        double sum = this.parcels.stream()
+                .mapToDouble(parcel -> parcel.getCost())
                 .sum();
         if (speedyShipping == true){
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);
@@ -60,6 +60,8 @@ public class Order {
     public void setSpeedyShipping(Boolean speedyShipping) {
         this.speedyShipping = speedyShipping;
     }
+
+    //    -------- IMPLEMENTATION STAGE 2 COMPLETE ----------
 
 
 

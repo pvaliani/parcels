@@ -24,36 +24,36 @@ public class ParcelTest {
 
     @Test
     public void getLength() {
-        assertEquals(9,smallParcel.getLength());
+        assertEquals(9,smallParcel.getLength(),0.01);
     }
 
     @Test
     public void canSetLength() {
         smallParcel.setLength(5);
-        assertEquals(5,smallParcel.getLength());
+        assertEquals(5,smallParcel.getLength(), 0.01);
     }
 
     @Test
     public void hasWidth() {
-        assertEquals(9, smallParcel.getWidth());
+        assertEquals(9, smallParcel.getWidth(), 0.01);
     }
 
     @Test
     public void canSetWidth() {
         smallParcel.setWidth(5);
-        assertEquals(5, smallParcel.getWidth());
+        assertEquals(5, smallParcel.getWidth(), 0.01);
     }
 
     @Test
     public void hasHeight() {
-        assertEquals(9, smallParcel.getHeight());
+        assertEquals(9, smallParcel.getHeight(), 0.01);
 //
     }
 
     @Test
     public void canSetHeight() {
         smallParcel.setHeight(5);
-        assertEquals(5, smallParcel.getHeight());
+        assertEquals(5, smallParcel.getHeight(), 0.01);
     }
 
     @Test
@@ -70,25 +70,25 @@ public class ParcelTest {
 
     @Test
     public void getCost() {
-        assertEquals(3, smallParcel.getCost());
+        assertEquals(3, smallParcel.getCost() ,0.01);
     }
 
     @Test
     public void setCost() {
         smallParcel.setCost(3);
-        assertEquals(3, smallParcel.getCost());
+        assertEquals(3, smallParcel.getCost(), 0.01);
     }
 
     @Test
     public void getParcelCostBySize(){
         smallParcel.setParcelCostBySize(9,9,9);
-        assertEquals(3, smallParcel.getCost());
+        assertEquals(3, smallParcel.getCost(), 0.01);
     }
 
     @Test
     public void getParcelCostBySizeUnassignedUncostedParcel(){
         unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
-        assertEquals(25, unassignedParcel.getCost());
+        assertEquals(25, unassignedParcel.getCost(), 0.01);
     }
 
     @Test

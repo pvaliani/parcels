@@ -60,7 +60,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
-        assertEquals(26, myOrder.calculateCostOfOrder());
+        assertEquals(26, myOrder.calculateCostOfOrder(),0.01);
     }
 
 
@@ -84,7 +84,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
-        assertEquals(52, myOrder.calculateCostOfOrder());
+        assertEquals(52, myOrder.calculateCostOfOrder(), 0.01);
 
     }
 
@@ -95,9 +95,11 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(false);
         myOrder.displayOrderContents();
-        assertEquals(26, myOrder.calculateCostOfOrder());
+        assertEquals(26, myOrder.calculateCostOfOrder(), 0.01);
 
     }
+
+//    -------- IMPLEMENTATION STAGE 2 COMPLETE ----------
 
 
 }
