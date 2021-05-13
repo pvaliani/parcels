@@ -61,26 +61,20 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
         assertEquals(26, myOrder.calculateCostOfOrder());
-
-
     }
 
-    @Test
-    public void canDisplayOrderContents(){
-//      This test does not work on an assertion but simply displays expected text output in conjunction
-//      with the test data
-        myOrder.addParcelToOrder(smallParcel);
-        myOrder.addParcelToOrder(mediumParcel);
-        myOrder.addParcelToOrder(largeParcel);
-        myOrder.displayOrderContents();
-
-    }
 
 //    ----------- IMPLEMENTATION STAGE 1 COMPLETE --------------
 
     @Test
     public void speedyShippingFalseByDefault(){
         assertEquals(false, myOrder.getSpeedyShipping());
+    }
+
+    @Test
+    public void speedyShippingSetTrue(){
+        myOrder.setSpeedyShipping(true);
+        assertEquals(true,myOrder.getSpeedyShipping());
     }
 
     @Test
