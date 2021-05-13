@@ -61,6 +61,18 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         assertEquals(26, myOrder.calculateCostOfOrder(myOrder.getParcels()));
 
+
+    }
+
+    @Test
+    public void canDisplayOrderContents(){
+//      This test does not work on an assertion but simply displays expected text output in conjunction
+//      with the test data
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.displayOrderContents(myOrder.getParcels());
+
     }
 
 

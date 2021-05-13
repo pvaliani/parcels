@@ -35,4 +35,13 @@ public class Order {
         System.out.println(sum);
         return sum;
     }
+
+    public void displayOrderContents(ArrayList<Parcel> parcels){
+        System.out.println("CURRENT ORDER CONTENTS:");
+        parcels.forEach(parcel -> {
+            System.out.println("Parcel Type - " + parcel.getType() + ", Parcel cost $" + parcel.getCost());
+        });
+    }
+
+
 }
