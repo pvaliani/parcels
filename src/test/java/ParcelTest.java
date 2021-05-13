@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ParcelTest {
 
+    Parcel unassignedParcel;
     Parcel smallParcel;
     Parcel mediumParcel;
     Parcel largeParcel;
@@ -12,6 +13,9 @@ public class ParcelTest {
 
     @Before
     public void before(){
+//      initialises edge cases for the parcels we expect and an unassigned parcel to test that
+//      methods are functioning as correctly when setting the cost
+        unassignedParcel = new Parcel (9,49,101, "unassigned", 0);
         smallParcel = new Parcel(9,9,9,"small",3);
         mediumParcel = new Parcel(49,49,49,"medium",8);
         largeParcel = new Parcel(99,99,99,"large",15);
@@ -73,5 +77,17 @@ public class ParcelTest {
     public void setCost() {
         smallParcel.setCost(3);
         assertEquals(3, smallParcel.getCost());
+    }
+
+    @Test
+    public void getParcelCostBySize(){
+        smallParcel.setParcelCostBySize(9,9,9);
+        assertEquals(3, smallParcel.getCost());
+    }
+
+    @Test
+    public void getParcelCostBySizeUnassignedUncostedParcel(){
+        unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
+        assertEquals(25, unassignedParcel.getCost());
     }
 }

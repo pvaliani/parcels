@@ -56,6 +56,19 @@ public class Parcel {
         this.cost = cost;
     }
 
+    public void setParcelCostBySize(int length, int width, int height){
+        if (length < 10 && width < 10  && height < 10){
+            this.cost = 3;
+        }
+        else if ( length < 50  && width < 50  && height < 50 ){
+            this.cost = 8;
+        }
+        else if ( length < 100  && width < 100  && height < 100 ){
+            this.cost = 15;
+        }
+        else
+            this.cost = 25;
+    }
 
 
 
