@@ -3,10 +3,10 @@ public class Parcel {
     private double length;
     private double width;
     private double height;
-    private String type;
+    private ParcelType type;
     private double cost;
 
-    public Parcel(double length, double width, double height, String type, double cost) {
+    public Parcel(double length, double width, double height, ParcelType type, double cost) {
         this.length = length;
         this.width = width;
         this.height = height;
@@ -40,11 +40,11 @@ public class Parcel {
         this.height = height;
     }
 
-    public String getType() {
+    public ParcelType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ParcelType type) {
         this.type = type;
     }
 
@@ -72,15 +72,15 @@ public class Parcel {
 
     public void setParcelTypeByCost(double cost){
         if (cost <= 3){
-            this.type = "small";
+            this.type = ParcelType.SMALL;
         }
         else if (cost <= 8){
-            this.type = "medium";
+            this.type = ParcelType.MEDIUM;
         }
         else if (cost <= 15){
-            this.type = "large";
+            this.type = ParcelType.LARGE;
         }
-        else this.type = "XL";
+        else this.type = ParcelType.XL;
     }
 
 //   ----------- IMPLEMENTATION STAGE 1 COMPLETE -----------

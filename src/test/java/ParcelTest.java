@@ -15,11 +15,11 @@ public class ParcelTest {
     public void before(){
 //      initialises edge cases for the parcels we expect and an unassigned parcel to test that
 //      methods are functioning as correctly when setting the cost
-        unassignedParcel = new Parcel (9,49,101, "unassigned", 0);
-        smallParcel = new Parcel(9,9,9,"small",3);
-        mediumParcel = new Parcel(49,49,49,"medium",8);
-        largeParcel = new Parcel(99,99,99,"large",15);
-        XLParcel = new Parcel(100,100,100,"XL",25);
+        unassignedParcel = new Parcel (9,49,101, ParcelType.UNASSIGNED, 0);
+        smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3);
+        mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8);
+        largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15);
+        XLParcel = new Parcel(100,100,100,ParcelType.XL,25);
     }
 
     @Test
@@ -58,13 +58,13 @@ public class ParcelTest {
 
     @Test
     public void getType() {
-        assertEquals("small", smallParcel.getType());
+        assertEquals(ParcelType.SMALL, smallParcel.getType());
     }
 
     @Test
     public void setType() {
-        smallParcel.setType("small");
-        assertEquals("small", smallParcel.getType());
+        smallParcel.setType(ParcelType.SMALL);
+        assertEquals(ParcelType.SMALL, smallParcel.getType());
 
     }
 
@@ -95,7 +95,7 @@ public class ParcelTest {
     public void getParcelTypeAfterCostedBySize(){
         unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
         unassignedParcel.setParcelTypeByCost(25);
-        assertEquals("XL", unassignedParcel.getType());
+        assertEquals(ParcelType.XL, unassignedParcel.getType());
     }
 
 //    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------
