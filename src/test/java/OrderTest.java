@@ -31,6 +31,14 @@ public class OrderTest {
         assertEquals(1, myOrder.parcelCount());
     }
 
+    @Test
+    public void canAddMultipleParcelsToOrder(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        assertEquals(3, myOrder.parcelCount());
+    }
+
 
 
 }
