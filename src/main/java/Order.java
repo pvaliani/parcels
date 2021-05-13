@@ -6,7 +6,7 @@ public class Order {
     private Boolean speedyShipping;
 
 
-    public Order(Boolean speedyShipping) {
+    public Order() {
         this.parcels = new ArrayList<>();
         this.speedyShipping = false;
     }
@@ -30,26 +30,23 @@ public class Order {
     public void clearOrder(){
         this.parcels.clear();
     }
-
-    public int calculateCostOfOrder(ArrayList<Parcel> parcels){
-        int sum = parcels.stream()
-                .mapToInt(a -> a.getCost())
+//    change a to parcel
+    public int calculateCostOfOrder(){
+        int sum = this.parcels.stream()
+                .mapToInt(parcel -> parcel.getCost())
                 .sum();
         if (speedyShipping == true){
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);
-            System.out.println("The total order cost in $ is:" + sum*2);
-            return sum * 2;
+            sum = sum*2;
         }
-
-        else if (speedyShipping == false){
             System.out.println("The total order cost in $ is:" + sum);
-        }
-            return sum;
-        }
 
-    public void displayOrderContents(ArrayList<Parcel> parcels){
+        return sum;
+    }
+
+    public void displayOrderContents(){
         System.out.println("CURRENT ORDER CONTENTS:");
-        parcels.forEach(parcel -> {
+        this.parcels.forEach(parcel -> {
             System.out.println("Parcel Type - " + parcel.getType() + ", Parcel cost $" + parcel.getCost());
         });
     }
@@ -63,6 +60,7 @@ public class Order {
     public void setSpeedyShipping(Boolean speedyShipping) {
         this.speedyShipping = speedyShipping;
     }
+
 
 
 

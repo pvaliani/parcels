@@ -10,11 +10,11 @@ public class OrderTest {
     Parcel mediumParcel;
     Parcel largeParcel;
     Parcel XLParcel;
-    private Boolean speedyShipping;
+
 
     @Before
     public void before(){
-        myOrder = new Order(speedyShipping);
+        myOrder = new Order();
         smallParcel = new Parcel(9,9,9,"small",3);
         mediumParcel = new Parcel(49,49,49,"medium",8);
         largeParcel = new Parcel(99,99,99,"large",15);
@@ -60,7 +60,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
-        assertEquals(26, myOrder.calculateCostOfOrder(myOrder.getParcels()));
+        assertEquals(26, myOrder.calculateCostOfOrder());
 
 
     }
@@ -72,7 +72,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
-        myOrder.displayOrderContents(myOrder.getParcels());
+        myOrder.displayOrderContents();
 
     }
 
@@ -89,7 +89,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(true);
-        assertEquals(52, myOrder.calculateCostOfOrder(myOrder.getParcels()));
+        assertEquals(52, myOrder.calculateCostOfOrder());
 
     }
 
@@ -99,8 +99,8 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(true);
-        myOrder.displayOrderContents(myOrder.getParcels());
-
+        myOrder.displayOrderContents();
     }
+
 
 }
