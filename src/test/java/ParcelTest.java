@@ -99,4 +99,9 @@ public class ParcelTest {
     }
 
 //    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------
+
+    @Test
+    public void canGetWeightLimitFromParcelType(){
+        assertEquals(1,ParcelType.SMALL.getWeightLimit(),0.01);
+    }
 }
