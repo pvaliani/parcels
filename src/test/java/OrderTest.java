@@ -48,6 +48,12 @@ public class OrderTest {
         assertEquals(2, myOrder.parcelCount());
     }
 
+    @Test
+    public void canClearOrder(){
+        myOrder.clearOrder();
+        assertEquals(0,myOrder.parcelCount());
+    }
+
 
 
 }

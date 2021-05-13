@@ -23,4 +23,8 @@ public class Order {
     public void removeParcelFromOrder(Parcel parcel){
         this.parcels.remove(parcel);
     }
+
+    public void clearOrder(){
+        this.parcels.clear();
+    }
 }
