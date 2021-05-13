@@ -78,22 +78,25 @@ public class OrderTest {
     }
 
     @Test
-    public void setSpeedyShippingTrueDoublesOrder(){
-        myOrder.addParcelToOrder(smallParcel);
-        myOrder.addParcelToOrder(mediumParcel);
-        myOrder.addParcelToOrder(largeParcel);
-        myOrder.setSpeedyShipping(true);
-        assertEquals(52, myOrder.calculateCostOfOrder());
-
-    }
-
-    @Test
-    public void canDisplayOrderContentsSpeedyShippingTrue(){
+    public void resultsSpeedyShippingApplied(){
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
+        assertEquals(52, myOrder.calculateCostOfOrder());
+
+    }
+
+    @Test
+    public void resultsSpeedyShippingNotApplied(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.setSpeedyShipping(false);
+        myOrder.displayOrderContents();
+        assertEquals(26, myOrder.calculateCostOfOrder());
+
     }
 
 

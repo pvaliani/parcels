@@ -39,7 +39,7 @@ public class Order {
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);
             sum = sum*2;
         }
-            System.out.println("The total order cost in $ is:" + sum);
+            System.out.println("The total order cost is " + "$"+sum);
 
         return sum;
     }
