@@ -54,6 +54,15 @@ public class OrderTest {
         assertEquals(0,myOrder.parcelCount());
     }
 
+    @Test
+    public void canCalculateTotalCostOfOrder(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        assertEquals(26, myOrder.calculateCostOfOrder(myOrder.getParcels()));
+
+    }
+
 
 
 }

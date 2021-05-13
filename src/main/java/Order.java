@@ -27,4 +27,12 @@ public class Order {
     public void clearOrder(){
         this.parcels.clear();
     }
+
+    public int calculateCostOfOrder(ArrayList<Parcel> parcels){
+        int sum = parcels.stream()
+                .mapToInt(a -> a.getCost())
+                .sum();
+        System.out.println(sum);
+        return sum;
+    }
 }
