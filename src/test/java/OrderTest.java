@@ -79,6 +79,11 @@ public class OrderTest {
 //    ----------- IMPLEMENTATION STAGE 1 COMPLETE --------------
 
     @Test
+    public void speedyShippingFalseByDefault(){
+        assertEquals(false, myOrder.getSpeedyShipping());
+    }
+
+    @Test
     public void setSpeedyShippingTrueDoublesOrder(){
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
