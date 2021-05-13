@@ -39,6 +39,15 @@ public class OrderTest {
         assertEquals(3, myOrder.parcelCount());
     }
 
+    @Test
+    public void canRemoveParcelFromOrder(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.removeParcelFromOrder(mediumParcel);
+        assertEquals(2, myOrder.parcelCount());
+    }
+
 
 
 }

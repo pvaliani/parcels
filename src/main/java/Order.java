@@ -19,4 +19,8 @@ public class Order {
     public void addParcelToOrder(Parcel parcel){
         this.parcels.add(parcel);
     }
+
+    public void removeParcelFromOrder(Parcel parcel){
+        this.parcels.remove(parcel);
+    }
 }
