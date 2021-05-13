@@ -70,6 +70,19 @@ public class Parcel {
             this.cost = 25;
     }
 
+    public void setParcelTypeByCost(int cost){
+        if (cost <= 3){
+            this.type = "small";
+        }
+        else if (cost <= 8){
+            this.type = "medium";
+        }
+        else if (cost <= 15){
+            this.type = "large";
+        }
+        else this.type = "XL";
+    }
+
 
 
 //

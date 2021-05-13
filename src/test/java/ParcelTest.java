@@ -90,4 +90,11 @@ public class ParcelTest {
         unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
         assertEquals(25, unassignedParcel.getCost());
     }
+
+    @Test
+    public void getParcelTypeAfterCostedBySize(){
+        unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
+        unassignedParcel.setParcelTypeByCost(25);
+        assertEquals("XL", unassignedParcel.getType());
+    }
 }
