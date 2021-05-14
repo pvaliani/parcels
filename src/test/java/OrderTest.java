@@ -139,6 +139,7 @@ public class OrderTest {
         assertEquals(68, myOrder.calculateCostOfOrder(), 0.01);
     }
 
+    //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
 
 
 }

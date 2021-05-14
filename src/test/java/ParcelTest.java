@@ -130,6 +130,8 @@ public class ParcelTest {
         assertEquals(29, XLParcelOverweight.getCost(), 0.01);
     }
 
+    //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
+
 
 
 
