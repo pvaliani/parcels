@@ -58,10 +58,13 @@ public class Parcel {
         this.cost = cost;
     }
 
-    public double getOverweightCharge(double weight){
-        double overweightCharge = 2 * weight;
+    public double getOverweightCharge(double weightDiff){
+
+        double overweightCharge = 2 * weightDiff;
         return overweightCharge;
+
     }
+
 
 //  if all lengths are less than 10 and the parcels weight is less than the weight limit the cost is 3
 //  else if the weight is > the weight limit for that parcel type
@@ -91,10 +94,15 @@ public class Parcel {
         else if (length >= 100 && width >= 100  && height >= 100 && weight <= ParcelType.XL.getWeightLimit()) {
             this.cost = 25;
         }
-        else if (length >= 100 && width >= 100  && height >= 100 && weight > ParcelType.XL.getWeightLimit()) {
+        else if (length >= 100 && width >= 100  && height >= 100 && weight > ParcelType.XL.getWeightLimit() && weight < ParcelType.HEAVY.getWeightLimit()) {
             double weightDiff = this.weight - ParcelType.XL.getWeightLimit();
             this.cost = 25 + getOverweightCharge(weightDiff);
         }
+        else if (weight >= ParcelType.HEAVY.getWeightLimit()) {
+            double weightDiff = this.weight - ParcelType.HEAVY.getWeightLimit();
+            this.cost = 50 + getOverweightCharge(weightDiff)/2;
+        }
+
     return cost;
     }
 
