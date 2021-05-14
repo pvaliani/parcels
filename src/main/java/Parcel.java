@@ -74,8 +74,12 @@ public class Parcel {
                 double weightDiff = this.weight-ParcelType.SMALL.getWeightLimit();
                 this.cost =  3 + getOverweightCharge(weightDiff);
         }
-        else if ( length < 50  && width < 50  && height < 50 ){
+        else if ( length < 50  && width < 50  && height < 50 && weight <= ParcelType.MEDIUM.getWeightLimit()){
             this.cost = 8;
+        }
+        else if (length < 50 && width < 50  && height < 50 && weight > ParcelType.MEDIUM.getWeightLimit()){
+            double weightDiff = this.weight-ParcelType.MEDIUM.getWeightLimit();
+            this.cost =  8 + getOverweightCharge(weightDiff);
         }
         else if ( length < 100  && width < 100  && height < 100 ){
             this.cost = 15;
