@@ -33,7 +33,7 @@ public class Order {
 //    change a to parcel
     public double calculateCostOfOrder(){
         double sum = this.parcels.stream()
-                .mapToDouble(parcel -> parcel.getCost())
+                .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
                 .sum();
         if (speedyShipping == true){
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);

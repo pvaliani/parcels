@@ -7,18 +7,26 @@ public class OrderTest {
 
     Order myOrder;
     Parcel smallParcel;
+    Parcel smallParcelOverweight;
     Parcel mediumParcel;
+    Parcel mediumParcelOverweight;
     Parcel largeParcel;
+    Parcel largeParcelOverweight;
     Parcel XLParcel;
+    Parcel XLParcelOverweight;
 
 
     @Before
     public void before(){
         myOrder = new Order();
         smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3, 1);
+        smallParcelOverweight = new Parcel(9,9,9,ParcelType.SMALL,3, 2);
         mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
+        mediumParcelOverweight = new Parcel(49,49,49,ParcelType.MEDIUM,8, 5);
         largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15, 6);
+        largeParcelOverweight = new Parcel(99,99,99,ParcelType.LARGE,15, 8);
         XLParcel = new Parcel(100,100,100,ParcelType.XL,25, 10);
+        XLParcelOverweight = new Parcel(100,100,100,ParcelType.XL,25, 12);
     }
 
     @Test
@@ -100,6 +108,17 @@ public class OrderTest {
     }
 
 //    -------- IMPLEMENTATION STAGE 2 COMPLETE ----------
+
+
+    //    -------- IMPLEMENTATION STAGE 3 COMPLETE ----------
+    @Test
+    public void canCalculateTotalCostOfOrderOverweightPackages(){
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(mediumParcelOverweight);
+        myOrder.addParcelToOrder(largeParcelOverweight);
+        assertEquals(36, myOrder.calculateCostOfOrder(),0.01);
+    }
+
 
 
 }

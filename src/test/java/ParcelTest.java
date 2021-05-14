@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ParcelTest {
 
-    Parcel unassignedParcel;
     Parcel smallParcel;
     Parcel smallParcelOverweight;
     Parcel mediumParcel;
@@ -17,9 +16,7 @@ public class ParcelTest {
 
     @Before
     public void before(){
-//      initialises edge cases for the parcels we expect and an unassigned parcel to test that
-//      methods are functioning as correctly when setting the cost
-        unassignedParcel = new Parcel (9,49,101, ParcelType.UNASSIGNED, 0, 0);
+//      initialises edge cases for the parcels we expect
         smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3, 1);
         smallParcelOverweight = new Parcel(9,9,9,ParcelType.SMALL,3, 2);
         mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
@@ -94,16 +91,10 @@ public class ParcelTest {
     }
 
     @Test
-    public void getParcelCostBySizeUnassignedUncostedParcel(){
-        unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
-        assertEquals(25, unassignedParcel.getCost(), 0.01);
-    }
-
-    @Test
     public void getParcelTypeAfterCostedBySize(){
-        unassignedParcel.setParcelCostBySize(unassignedParcel.getLength(), unassignedParcel.getWidth(), unassignedParcel.getHeight());
-        unassignedParcel.setParcelTypeByCost(25);
-        assertEquals(ParcelType.XL, unassignedParcel.getType());
+        smallParcel.setParcelCostBySize(smallParcel.getLength(), smallParcel.getWidth(), smallParcel.getHeight());
+        smallParcel.setParcelTypeByCost(25);
+        assertEquals(ParcelType.XL, smallParcel.getType());
     }
 
 //    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------
@@ -112,7 +103,6 @@ public class ParcelTest {
     public void canGetWeightLimitFromParcelType(){
         assertEquals(1,ParcelType.SMALL.getWeightLimit(),0.01);
     }
-
 
 //    ------------------- IMPLEMENTATION STAGE 3 COMPLETE ---------------------
 

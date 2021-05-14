@@ -1,5 +1,4 @@
 public enum ParcelType {
-    UNASSIGNED(0.000),
     SMALL(1),
     MEDIUM(3),
     LARGE(6),

@@ -66,7 +66,7 @@ public class Parcel {
 //  if all lengths are less than 10 and the parcels weight is less than the weight limit the cost is 3
 //  else if the weight is > the weight limit for that parcel type
 
-    public void setParcelCostBySize(double length, double width, double height){
+    public double setParcelCostBySize(double length, double width, double height){
         if (length < 10 && width < 10  && height < 10 && weight <= ParcelType.SMALL.getWeightLimit()){
             this.cost = 3;
         }
@@ -95,7 +95,7 @@ public class Parcel {
             double weightDiff = this.weight - ParcelType.XL.getWeightLimit();
             this.cost = 25 + getOverweightCharge(weightDiff);
         }
-
+    return cost;
     }
 
     public void setParcelTypeByCost(double cost){
