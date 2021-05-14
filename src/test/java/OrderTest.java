@@ -127,7 +127,16 @@ public class OrderTest {
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
         assertEquals(72, myOrder.calculateCostOfOrder(), 0.01);
+    }
 
+    @Test
+    public void resultsSpeedyShippingAppliedMixOfUnderAndOverweight(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcelOverweight);
+        myOrder.addParcelToOrder(largeParcelOverweight);
+        myOrder.setSpeedyShipping(true);
+        myOrder.displayOrderContents();
+        assertEquals(68, myOrder.calculateCostOfOrder(), 0.01);
     }
 
 
