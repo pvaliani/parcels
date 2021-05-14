@@ -2,7 +2,8 @@ public enum ParcelType {
     SMALL(1),
     MEDIUM(3),
     LARGE(6),
-    XL(10);
+    XL(10),
+    HEAVY(50);
 
     private final double weightLimit;
 
