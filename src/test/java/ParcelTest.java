@@ -7,6 +7,7 @@ public class ParcelTest {
 
     Parcel unassignedParcel;
     Parcel smallParcel;
+    Parcel smallParcelOverweight;
     Parcel mediumParcel;
     Parcel largeParcel;
     Parcel XLParcel;
@@ -15,11 +16,12 @@ public class ParcelTest {
     public void before(){
 //      initialises edge cases for the parcels we expect and an unassigned parcel to test that
 //      methods are functioning as correctly when setting the cost
-        unassignedParcel = new Parcel (9,49,101, ParcelType.UNASSIGNED, 0);
-        smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3);
-        mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8);
-        largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15);
-        XLParcel = new Parcel(100,100,100,ParcelType.XL,25);
+        unassignedParcel = new Parcel (9,49,101, ParcelType.UNASSIGNED, 0, 0);
+        smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3, 1);
+        smallParcelOverweight = new Parcel(9,9,9,ParcelType.SMALL,3, 2);
+        mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
+        largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15, 6);
+        XLParcel = new Parcel(100,100,100,ParcelType.XL,25, 10);
     }
 
     @Test
@@ -104,4 +106,17 @@ public class ParcelTest {
     public void canGetWeightLimitFromParcelType(){
         assertEquals(1,ParcelType.SMALL.getWeightLimit(),0.01);
     }
+
+
+//    ------------------- IMPLEMENTATION STAGE 3 COMPLETE ---------------------
+
+    @Test
+    public void getParcelCostBySizeOverweightSmallParcel(){
+        smallParcelOverweight.setParcelCostBySize(smallParcelOverweight.getLength(), smallParcelOverweight.getWidth(), smallParcelOverweight.getHeight());
+        assertEquals(5, smallParcelOverweight.getCost(), 0.01);
+    }
+
+
+    
+
 }

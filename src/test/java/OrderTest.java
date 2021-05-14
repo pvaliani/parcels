@@ -15,10 +15,10 @@ public class OrderTest {
     @Before
     public void before(){
         myOrder = new Order();
-        smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3);
-        mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8);
-        largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15);
-        XLParcel = new Parcel(100,100,100,ParcelType.XL,25);
+        smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3, 1);
+        mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
+        largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15, 6);
+        XLParcel = new Parcel(100,100,100,ParcelType.XL,25, 10);
     }
 
     @Test
