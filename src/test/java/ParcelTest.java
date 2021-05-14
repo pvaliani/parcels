@@ -11,7 +11,9 @@ public class ParcelTest {
     Parcel mediumParcel;
     Parcel mediumParcelOverweight;
     Parcel largeParcel;
+    Parcel largeParcelOverweight;
     Parcel XLParcel;
+    Parcel XLParcelOverweight;
 
     @Before
     public void before(){
@@ -23,7 +25,9 @@ public class ParcelTest {
         mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
         mediumParcelOverweight = new Parcel(49,49,49,ParcelType.MEDIUM,8, 5);
         largeParcel = new Parcel(99,99,99,ParcelType.LARGE,15, 6);
+        largeParcelOverweight = new Parcel(99,99,99,ParcelType.LARGE,15, 8);
         XLParcel = new Parcel(100,100,100,ParcelType.XL,25, 10);
+        XLParcelOverweight = new Parcel(100,100,100,ParcelType.XL,25, 12);
     }
 
     @Test
@@ -122,6 +126,18 @@ public class ParcelTest {
     public void getParcelCostBySizeOverweightMediumParcel(){
         mediumParcelOverweight.setParcelCostBySize(mediumParcelOverweight.getLength(), mediumParcelOverweight.getWidth(), mediumParcelOverweight.getHeight());
         assertEquals(12, mediumParcelOverweight.getCost(), 0.01);
+    }
+
+    @Test
+    public void getParcelCostBySizeOverweightLargeParcel(){
+        largeParcelOverweight.setParcelCostBySize(largeParcelOverweight.getLength(), largeParcelOverweight.getWidth(), largeParcelOverweight.getHeight());
+        assertEquals(19, largeParcelOverweight.getCost(), 0.01);
+    }
+
+    @Test
+    public void getParcelCostBySizeOverweightXLParcel(){
+        XLParcelOverweight.setParcelCostBySize(XLParcelOverweight.getLength(), XLParcelOverweight.getWidth(), XLParcelOverweight.getHeight());
+        assertEquals(29, XLParcelOverweight.getCost(), 0.01);
     }
 
 

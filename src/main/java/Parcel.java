@@ -81,11 +81,21 @@ public class Parcel {
             double weightDiff = this.weight-ParcelType.MEDIUM.getWeightLimit();
             this.cost =  8 + getOverweightCharge(weightDiff);
         }
-        else if ( length < 100  && width < 100  && height < 100 ){
+        else if ( length < 100  && width < 100  && height < 100 && weight <= ParcelType.LARGE.getWeightLimit() ){
             this.cost = 15;
         }
-        else
+        else if (length < 100 && width < 100  && height < 100 && weight > ParcelType.LARGE.getWeightLimit()) {
+            double weightDiff = this.weight - ParcelType.LARGE.getWeightLimit();
+            this.cost = 15 + getOverweightCharge(weightDiff);
+        }
+        else if (length >= 100 && width >= 100  && height >= 100 && weight <= ParcelType.XL.getWeightLimit()) {
             this.cost = 25;
+        }
+        else if (length >= 100 && width >= 100  && height >= 100 && weight > ParcelType.XL.getWeightLimit()) {
+            double weightDiff = this.weight - ParcelType.XL.getWeightLimit();
+            this.cost = 25 + getOverweightCharge(weightDiff);
+        }
+
     }
 
     public void setParcelTypeByCost(double cost){
