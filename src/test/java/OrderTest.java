@@ -14,6 +14,8 @@ public class OrderTest {
     Parcel largeParcelOverweight;
     Parcel XLParcel;
     Parcel XLParcelOverweight;
+    Parcel heavyParcel;
+    Parcel heavyParcelOverweight;
 
 
     @Before
@@ -27,6 +29,7 @@ public class OrderTest {
         largeParcelOverweight = new Parcel(99,99,99,ParcelType.LARGE,15, 8);
         XLParcel = new Parcel(100,100,100,ParcelType.XL,25, 10);
         XLParcelOverweight = new Parcel(100,100,100,ParcelType.XL,25, 12);
+        heavyParcelOverweight = new Parcel(100,100,100,ParcelType.HEAVY,50, 51);
     }
 
     @Test
@@ -140,6 +143,14 @@ public class OrderTest {
     }
 
     //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
+
+    @Test
+    public void canCalculateTotalCostOfOrderWithHeavyPackages(){
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(heavyParcelOverweight);
+        assertEquals(64, myOrder.calculateCostOfOrder(),0.01);
+    }
 
 
 }
