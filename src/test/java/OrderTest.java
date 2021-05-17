@@ -228,6 +228,25 @@ public class OrderTest {
         assertEquals(23,  myOrder.mixedParcelDiscount(),0.01);
     }
 
+// Test calculates an order consisting mostly of small parcels and applies the appropriate small parcel discount
+    @Test
+    public void calculateTotalCostWithSmallParcelDiscount(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        assertEquals(35,  myOrder.calculateCostOfOrder(),0.01);
+    }
+
 
 
 

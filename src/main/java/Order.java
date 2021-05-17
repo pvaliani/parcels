@@ -43,7 +43,7 @@ public class Order {
         }
             System.out.println("The total order cost is " + "$"+sum);
 
-        return sum;
+        return sum - smallParcelDiscount();
     }
 
     public void displayOrderContents(){
