@@ -244,8 +244,29 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
+        myOrder.displayOrderContents();
         assertEquals(35,  myOrder.calculateCostOfOrder(),0.01);
     }
+
+    @Test
+    public void calculateTotalCostWithSmallParcelDiscountMixedParcels(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(XLParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.displayOrderContents();
+        assertEquals(79,  myOrder.calculateCostOfOrder(),0.01);
+    }
+
 
 
 
