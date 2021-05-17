@@ -15,9 +15,10 @@ public class ParcelTest {
     Parcel XLParcelOverweight;
     Parcel heavyParcelOverweight;
 
+//  Initial test data for a parcel
+
     @Before
     public void before(){
-//      initialises edge cases for the parcels we expect
         smallParcel = new Parcel(9,9,9,ParcelType.SMALL,3, 1);
         smallParcelOverweight = new Parcel(9,9,9,ParcelType.SMALL,3, 2);
         mediumParcel = new Parcel(49,49,49,ParcelType.MEDIUM,8, 3);
@@ -29,6 +30,7 @@ public class ParcelTest {
         heavyParcelOverweight = new Parcel(100,100,100,ParcelType.HEAVY,50, 51);
     }
 
+//  Test gettters and setters for parcel properties
     @Test
     public void getLength() {
         assertEquals(9,smallParcel.getLength(),0.01);
@@ -86,6 +88,7 @@ public class ParcelTest {
         assertEquals(3, smallParcel.getCost(), 0.01);
     }
 
+//  Test that a parcel can be costed based on its size and that its type is set accordingly
     @Test
     public void getParcelCostBySize(){
         smallParcel.setParcelCostBySize(9,9,9);
@@ -107,6 +110,8 @@ public class ParcelTest {
     }
 
 //    ------------------- IMPLEMENTATION STAGE 3 COMPLETE ---------------------
+
+// Tests that an overweight parcel can be costed based on its size
 
     @Test
     public void getParcelCostBySizeOverweightSmallParcel(){
@@ -134,6 +139,8 @@ public class ParcelTest {
 
     //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
 
+//  Test for a heavy parcel - currently this takes in the size dimensions but a future implementation
+//  would mean it shouldn't have to as the parcel is classed as heavy if it is over the 50kg weight limit irrespective of its dimensions
     @Test
     public void getParcelCostBySizeOverweightHeavyParcel(){
         heavyParcelOverweight.setParcelCostBySize(heavyParcelOverweight.getLength(), heavyParcelOverweight.getWidth(), heavyParcelOverweight.getHeight());

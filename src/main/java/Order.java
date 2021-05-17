@@ -68,7 +68,7 @@ public class Order {
 //  The discounts operate by returning a total sum which is made up of the value of the discounted parcel
 //  in relation to its cost as per the rules in the documentation. The original cost of each parcel is not modified.
 //  i.e every 3rd/4th/Nth parcel is added to a total and returned as a sum which can be subtracted from the Order.
-    
+
     public double smallParcelDiscount(){
         return IntStream.range(0, parcels.size())
                 .filter(n -> (n + 1) % 4 == 0) // every 4th parcel
