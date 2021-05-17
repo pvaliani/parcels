@@ -287,7 +287,7 @@ public class OrderTest {
         assertEquals(158,  myOrder.calculateCostOfOrder(),0.01);
     }
 
-    // Test calculates an order consisting mostly of small parcels and applies the appropriate small parcel discount
+    // Test calculates an order consisting mostly of medium parcels and applies the appropriate small parcel discount
     @Test
     public void calculateTotalCostWithMediumParcelDiscount(){
         myOrder.addParcelToOrder(mediumParcel);
@@ -336,12 +336,30 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(smallParcelOverweight);
-        myOrder.addParcelToOrder(smallParcel);
-        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(smallParcelOverweight);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(240,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(244,  myOrder.calculateCostOfOrder(),0.01);
+    }
+
+    // Test calculates an order consisting mostly of medium parcels and applies the appropriate small parcel discount
+    @Test
+    public void calculateTotalCostWithMixedParcelDiscount(){
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(XLParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(mediumParcelOverweight);
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(heavyParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.displayOrderContents();
+        assertEquals(103,  myOrder.calculateCostOfOrder(),0.01);
     }
 
 

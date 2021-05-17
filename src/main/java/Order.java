@@ -37,7 +37,7 @@ public class Order {
         double sum = this.parcels.stream()
                 .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
                 .sum();
-        double finalSum = sum - smallParcelDiscount() - mediumParcelDiscount();
+        double finalSum = sum - smallParcelDiscount() - mediumParcelDiscount() - mixedParcelDiscount();
         if (speedyShipping == true){
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+finalSum);
             finalSum = finalSum*2;
@@ -51,6 +51,7 @@ public class Order {
         this.parcels.forEach(parcel -> {
             System.out.println("Parcel Type - " + parcel.getType() + ", Parcel cost $" + parcel.getCost());
         });
+        System.out.println("Overweight parcels are charged at a rate of $2/kg beyond the weight limit");
     }
 
 //    --------- IMPLEMENTATION STAGE 1 COMPLETE -----------

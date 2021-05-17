@@ -60,6 +60,7 @@ public class Parcel {
 
     public double getOverweightCharge(double weightDiff){
 
+
         double overweightCharge = 2 * weightDiff;
         return overweightCharge;
 
