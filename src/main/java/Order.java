@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
+// Order class instantiates an ArrayList of parcel objects which make up the couriers parcel order
 public class Order {
 
     private ArrayList<Parcel> parcels;
     private Boolean speedyShipping;
-
 
     public Order() {
         this.parcels = new ArrayList<>();
@@ -31,7 +31,8 @@ public class Order {
     public void clearOrder(){
         this.parcels.clear();
     }
-//    change a to parcel
+
+//  The overall cost of an order is returned as a sum depending on whether or not speedyShipping is selected
     public double calculateCostOfOrder(){
         double sum = this.parcels.stream()
                 .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
@@ -64,34 +65,35 @@ public class Order {
 
     //    -------- IMPLEMENTATION STAGE 2 COMPLETE ----------
 
+//  The discounts operate by returning a total sum which is made up of the value of the discounted parcel
+//  in relation to its cost as per the rules in the documentation. The original cost of each parcel is not modified.
+//  i.e every 3rd/4th/Nth parcel is added to a total and returned as a sum which can be subtracted from the Order.
+    
     public double smallParcelDiscount(){
         return IntStream.range(0, parcels.size())
-                .filter(n -> (n + 1) % 4 == 0) //take every fourth parcel one based
+                .filter(n -> (n + 1) % 4 == 0) // every 4th parcel
                 .mapToObj(parcels::get)
-                .filter(parcel -> ParcelType.SMALL.equals(parcel.getType()))
+                .filter(parcel -> ParcelType.SMALL.equals(parcel.getType())) // filter the smalls
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
-
     }
 
     public double mediumParcelDiscount(){
         return IntStream.range(0, parcels.size())
-                .filter(n -> (n + 1) % 3 == 0) //take every fourth parcel one based
+                .filter(n -> (n + 1) % 3 == 0) // every 3rd parcel
                 .mapToObj(parcels::get)
-                .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType()))
+                .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType())) // filter the mediums
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
-
     }
 
+//  The mixed parcel discount implementation does not require a filter
     public double mixedParcelDiscount(){
         return IntStream.range(0, parcels.size())
-                .filter(n -> (n + 1) % 5 == 0) //take every fourth parcel one based
+                .filter(n -> (n + 1) % 5 == 0) // every 5th parcel
                 .mapToObj(parcels::get)
-//                .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType()))
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
-
     }
 
 

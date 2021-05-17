@@ -66,8 +66,8 @@ public class Parcel {
     }
 
 
-//  if all lengths are less than 10 and the parcels weight is less than the weight limit the cost is 3
-//  else if the weight is > the weight limit for that parcel type
+//  Parcels are costed by their size and weight with respect to the weight limit provided for each type
+//  of parcel in the exercise documentation
 
     public double setParcelCostBySize(double length, double width, double height){
         if (length < 10 && width < 10  && height < 10 && weight <= ParcelType.SMALL.getWeightLimit()){
@@ -106,6 +106,7 @@ public class Parcel {
     return cost;
     }
 
+//  Once the cost has been defined for the parcel object the type is set accordingly
     public void setParcelTypeByCost(double cost){
         if (cost <= 3){
             this.type = ParcelType.SMALL;
