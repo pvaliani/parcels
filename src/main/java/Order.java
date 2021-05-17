@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class Order {
 
@@ -63,6 +64,15 @@ public class Order {
 
     //    -------- IMPLEMENTATION STAGE 2 COMPLETE ----------
 
+    public double smallParcelDiscount(){
+        return IntStream.range(0, parcels.size())
+                .filter(n -> (n + 1) % 4 == 0) //take every fourth parcel one based
+                .mapToObj(parcels::get)
+                .filter(parcel -> ParcelType.SMALL.equals(parcel.getType()))
+                .mapToDouble(parcel -> parcel.getCost())
+                .sum();
+
+    }
 
 
 
