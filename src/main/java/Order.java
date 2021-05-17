@@ -74,6 +74,15 @@ public class Order {
 
     }
 
+    public double mediumParcelDiscount(){
+        return IntStream.range(0, parcels.size())
+                .filter(n -> (n + 1) % 3 == 0) //take every fourth parcel one based
+                .mapToObj(parcels::get)
+                .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType()))
+                .mapToDouble(parcel -> parcel.getCost())
+                .sum();
+
+    }
 
 
 

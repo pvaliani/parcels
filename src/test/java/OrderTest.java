@@ -179,6 +179,25 @@ public class OrderTest {
         assertEquals(9,  myOrder.smallParcelDiscount(),0.01);
     }
 
+    @Test
+    public void mediumParcelDiscountTest(){
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        assertEquals(16,  myOrder.mediumParcelDiscount(),0.01);
+    }
+
+
 
 
 
