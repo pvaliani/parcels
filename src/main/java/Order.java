@@ -37,13 +37,13 @@ public class Order {
         double sum = this.parcels.stream()
                 .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
                 .sum();
+        double finalSum = sum - smallParcelDiscount();
         if (speedyShipping == true){
-            System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+sum);
-            sum = sum*2;
+            System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+finalSum);
+            finalSum = finalSum*2;
         }
-            System.out.println("The total order cost is " + "$"+sum);
-
-        return sum - smallParcelDiscount();
+        System.out.println("The total order cost is " + "$"+finalSum);
+        return finalSum;
     }
 
     public void displayOrderContents(){

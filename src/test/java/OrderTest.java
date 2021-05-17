@@ -267,6 +267,26 @@ public class OrderTest {
         assertEquals(79,  myOrder.calculateCostOfOrder(),0.01);
     }
 
+    @Test
+    public void calculateTotalCostWithSmallParcelDiscountMixedParcelsSpeedyShippingApplied(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(XLParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.displayOrderContents();
+        myOrder.setSpeedyShipping(true);
+        assertEquals(158,  myOrder.calculateCostOfOrder(),0.01);
+    }
+
 
 
 
