@@ -306,7 +306,7 @@ public class OrderTest {
     }
 
     @Test
-    public void calculateTotalCostWithMediumDiscountMixedParcels(){
+    public void calculateTotalCostWithMediumParcelDiscountMixedParcels(){
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.addParcelToOrder(smallParcel);
@@ -324,7 +324,25 @@ public class OrderTest {
         assertEquals(92,  myOrder.calculateCostOfOrder(),0.01);
     }
 
-
+    @Test
+    public void calculateTotalCostWithMediumParcelDiscountMixedParcelsSpeedyShippingApplied(){
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(XLParcel);
+        myOrder.addParcelToOrder(largeParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.addParcelToOrder(smallParcelOverweight);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(smallParcel);
+        myOrder.addParcelToOrder(mediumParcel);
+        myOrder.displayOrderContents();
+        myOrder.setSpeedyShipping(true);
+        assertEquals(240,  myOrder.calculateCostOfOrder(),0.01);
+    }
 
 
 
