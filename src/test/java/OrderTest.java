@@ -245,7 +245,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(35,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(29,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     @Test
@@ -264,7 +264,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(79,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(71,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     @Test
@@ -284,7 +284,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(158,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(142,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     // Test calculates an order consisting mostly of medium parcels and applies the appropriate small parcel discount
@@ -302,7 +302,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(smallParcel);
         myOrder.displayOrderContents();
-        assertEquals(59,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(43,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     @Test
@@ -321,7 +321,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(92,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(84,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     @Test
@@ -341,7 +341,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(244,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(218,  myOrder.calculateCostOfOrder(),0.01);
     }
 
     // Test calculates an order consisting mostly of medium parcels and applies the appropriate small parcel discount
