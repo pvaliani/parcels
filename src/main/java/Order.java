@@ -70,30 +70,37 @@ public class Order {
 //  i.e every 3rd/4th/Nth parcel is added to a total and returned as a sum which can be subtracted from the Order.
 
     public double smallParcelDiscount(){
-        return IntStream.range(0, parcels.size())
+
+        double smallParcelDiscount = IntStream.range(0, parcels.size())
                 .filter(n -> (n + 1) % 4 == 0) // every 4th parcel
                 .mapToObj(parcels::get)
                 .filter(parcel -> ParcelType.SMALL.equals(parcel.getType())) // filter the smalls
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
+                System.out.println("You have saved $"+smallParcelDiscount+" with the Small Parcel Mania discount!");
+        return smallParcelDiscount;
     }
 
     public double mediumParcelDiscount(){
-        return IntStream.range(0, parcels.size())
+        double mediumParcelDiscount =  IntStream.range(0, parcels.size())
                 .filter(n -> (n + 1) % 3 == 0) // every 3rd parcel
                 .mapToObj(parcels::get)
                 .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType())) // filter the mediums
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
+                System.out.println("You have saved $"+mediumParcelDiscount+" with the Medium Parcel Mania discount!");
+        return mediumParcelDiscount;
     }
 
 //  The mixed parcel discount implementation does not require a filter
     public double mixedParcelDiscount(){
-        return IntStream.range(0, parcels.size())
+        double mixedParcelDiscount = IntStream.range(0, parcels.size())
                 .filter(n -> (n + 1) % 5 == 0) // every 5th parcel
                 .mapToObj(parcels::get)
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
+                System.out.println("You have saved $"+mixedParcelDiscount+" with the Mixed Parcel Mania discount!");
+        return mixedParcelDiscount;
     }
 
 

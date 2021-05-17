@@ -139,6 +139,7 @@ public class OrderTest {
     }
 
 //  Test to calculate the cost of an order with a mix of overweight and standard parcels, with speedy shipping - no discounts
+//     add overwight surcharge note
     @Test
     public void resultsSpeedyShippingAppliedMixOfUnderAndOverweightParcels(){
         myOrder.addParcelToOrder(smallParcel);

@@ -30,7 +30,7 @@ public class ParcelTest {
         heavyParcelOverweight = new Parcel(100,100,100,ParcelType.HEAVY,50, 51);
     }
 
-//  Test gettters and setters for parcel properties
+//  Test getters and setters for parcel properties
     @Test
     public void getLength() {
         assertEquals(9,smallParcel.getLength(),0.01);
