@@ -37,7 +37,7 @@ public class Order {
         double sum = this.parcels.stream()
                 .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
                 .sum();
-        double finalSum = sum - smallParcelDiscount();
+        double finalSum = sum - smallParcelDiscount() - mediumParcelDiscount();
         if (speedyShipping == true){
             System.out.println("You have selected speedy shipping! The cost of speedy shipping is $"+finalSum);
             finalSum = finalSum*2;
@@ -77,7 +77,9 @@ public class Order {
                 .filter(parcel -> ParcelType.SMALL.equals(parcel.getType())) // filter the smalls
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
-                System.out.println("You have saved $"+smallParcelDiscount+" with the Small Parcel Mania discount!");
+                if (smallParcelDiscount > 0) {
+                    System.out.println("You have saved $" + smallParcelDiscount + " with the Small Parcel Mania discount!");
+                }
         return smallParcelDiscount;
     }
 
@@ -88,7 +90,9 @@ public class Order {
                 .filter(parcel -> ParcelType.MEDIUM.equals(parcel.getType())) // filter the mediums
                 .mapToDouble(parcel -> parcel.getCost())
                 .sum();
-                System.out.println("You have saved $"+mediumParcelDiscount+" with the Medium Parcel Mania discount!");
+                if (mediumParcelDiscount > 0) {
+                    System.out.println("You have saved $" + mediumParcelDiscount + " with the Medium Parcel Mania discount!");
+                }
         return mediumParcelDiscount;
     }
 
