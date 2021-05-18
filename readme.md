@@ -3,6 +3,8 @@
 # Summary
 
 - I have completed implementations 1-4 and approx 50-60% of implementation 5
+- At every stage I committed after creating and running a unit test to implement new functionality and built up the exercise over time
+- In certain scenarios I used pen and paper to work through logic in my application to verify expected/actual test results ✍🏻
 - I prioritised testing over feature implementation which is partly why I wasn’t able to finish implementation 5
 - There is no UI/CLI - the application is purely TDD i.e when wanting to check the logic of the program each unit test as described should be run to confirm the behaviour of the app as per the specification
 - Unit test names are verbose to aid readability and optimise the number of code comments 
