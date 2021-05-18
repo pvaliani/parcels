@@ -1,4 +1,4 @@
-# Courier Kata
+# Courier Kata - Exercise Brief and Highlight of Progress
 
 You work for a courier company and have been tasked with creating a code library to
 calculate the cost of sending an order of parcels.
