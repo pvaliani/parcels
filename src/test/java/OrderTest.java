@@ -17,7 +17,7 @@ public class OrderTest {
     Parcel heavyParcel;
     Parcel heavyParcelOverweight;
 
-// initalise a test order and test parcels including overweight parcels
+    // initalise a test order and test parcels including overweight parcels
     @Before
     public void before(){
         myOrder = new Order();
@@ -76,7 +76,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(largeParcel);
-        assertEquals(26, myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(26, myOrder.calculateCostOfOrder(),0.00);
     }
 
 
@@ -102,7 +102,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
-        assertEquals(52, myOrder.calculateCostOfOrder(), 0.01);
+        assertEquals(52, myOrder.calculateCostOfOrder(), 0.00);
 
     }
 
@@ -114,7 +114,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.setSpeedyShipping(false);
         myOrder.displayOrderContents();
-        assertEquals(26, myOrder.calculateCostOfOrder(), 0.01);
+        assertEquals(26, myOrder.calculateCostOfOrder(), 0.00);
 
     }
 
@@ -130,7 +130,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcelOverweight);
         myOrder.addParcelToOrder(mediumParcelOverweight);
         myOrder.addParcelToOrder(largeParcelOverweight);
-        assertEquals(36, myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(36, myOrder.calculateCostOfOrder(),0.00);
     }
 
 
@@ -142,7 +142,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcelOverweight);
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
-        assertEquals(72, myOrder.calculateCostOfOrder(), 0.01);
+        assertEquals(72, myOrder.calculateCostOfOrder(), 0.00);
     }
 
 
@@ -154,7 +154,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcelOverweight);
         myOrder.setSpeedyShipping(true);
         myOrder.displayOrderContents();
-        assertEquals(68, myOrder.calculateCostOfOrder(), 0.01);
+        assertEquals(68, myOrder.calculateCostOfOrder(), 0.00);
     }
 
     //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
@@ -167,7 +167,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcelOverweight);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(heavyParcel);
-        assertEquals(63, myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(63, myOrder.calculateCostOfOrder(),0.00);
     }
 
 
@@ -177,7 +177,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcelOverweight);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(heavyParcelOverweight);
-        assertEquals(64, myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(64, myOrder.calculateCostOfOrder(),0.00);
     }
 
 
@@ -198,7 +198,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
-        assertEquals(9,  myOrder.smallParcelDiscount(),0.01);
+        assertEquals(9,  myOrder.smallParcelDiscount(),0.00);
     }
 
     //  Tests that the medium parcel discount can be applied to an order
@@ -217,7 +217,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(smallParcel);
-        assertEquals(16,  myOrder.mediumParcelDiscount(),0.01);
+        assertEquals(16,  myOrder.mediumParcelDiscount(),0.00);
     }
 
 
@@ -238,7 +238,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(XLParcel);
         myOrder.addParcelToOrder(smallParcelOverweight);
-        assertEquals(23,  myOrder.mixedParcelDiscount(),0.01);
+        assertEquals(23,  myOrder.mixedParcelDiscount(),0.00);
     }
 
 
@@ -260,7 +260,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(29,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(29,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -281,7 +281,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(71,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(71,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -303,7 +303,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(142,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(142,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -322,7 +322,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(smallParcel);
         myOrder.displayOrderContents();
-        assertEquals(43,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(43,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -343,7 +343,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
-        assertEquals(84,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(84,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -363,7 +363,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(218,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(218,  myOrder.calculateCostOfOrder(),0.00);
     }
 
 
@@ -382,7 +382,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(heavyParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.displayOrderContents();
-        assertEquals(103,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(103,  myOrder.calculateCostOfOrder(),0.00);
     }
 
     @Test
@@ -401,7 +401,7 @@ public class OrderTest {
         myOrder.addParcelToOrder(largeParcel);
         myOrder.displayOrderContents();
         myOrder.setSpeedyShipping(true);
-        assertEquals(206,  myOrder.calculateCostOfOrder(),0.01);
+        assertEquals(206,  myOrder.calculateCostOfOrder(),0.00);
     }
 
 

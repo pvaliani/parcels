@@ -33,36 +33,36 @@ public class ParcelTest {
     //  Test getters and setters for parcel properties
     @Test
     public void getLength() {
-        assertEquals(9,smallParcel.getLength(),0.01);
+        assertEquals(9,smallParcel.getLength(),0.00);
     }
 
     @Test
     public void canSetLength() {
         smallParcel.setLength(5);
-        assertEquals(5,smallParcel.getLength(), 0.01);
+        assertEquals(5,smallParcel.getLength(), 0.00);
     }
 
     @Test
     public void hasWidth() {
-        assertEquals(9, smallParcel.getWidth(), 0.01);
+        assertEquals(9, smallParcel.getWidth(), 0.00);
     }
 
     @Test
     public void canSetWidth() {
         smallParcel.setWidth(5);
-        assertEquals(5, smallParcel.getWidth(), 0.01);
+        assertEquals(5, smallParcel.getWidth(), 0.00);
     }
 
     @Test
     public void hasHeight() {
-        assertEquals(9, smallParcel.getHeight(), 0.01);
+        assertEquals(9, smallParcel.getHeight(), 0.00);
 
     }
 
     @Test
     public void canSetHeight() {
         smallParcel.setHeight(5);
-        assertEquals(5, smallParcel.getHeight(), 0.01);
+        assertEquals(5, smallParcel.getHeight(), 0.00);
     }
 
     @Test
@@ -79,20 +79,20 @@ public class ParcelTest {
 
     @Test
     public void getCost() {
-        assertEquals(3, smallParcel.getCost() ,0.01);
+        assertEquals(3, smallParcel.getCost() ,0.00);
     }
 
     @Test
     public void setCost() {
         smallParcel.setCost(3);
-        assertEquals(3, smallParcel.getCost(), 0.01);
+        assertEquals(3, smallParcel.getCost(), 0.00);
     }
 
     // Test that a parcel can be costed based on its size and that its type is set accordingly
     @Test
     public void getParcelCostBySize(){
         smallParcel.setParcelCostBySize(9,9,9);
-        assertEquals(3, smallParcel.getCost(), 0.01);
+        assertEquals(3, smallParcel.getCost(), 0.00);
     }
 
     @Test
@@ -106,7 +106,7 @@ public class ParcelTest {
 
     @Test
     public void canGetWeightLimitFromParcelType(){
-        assertEquals(1,ParcelType.SMALL.getWeightLimit(),0.01);
+        assertEquals(1,ParcelType.SMALL.getWeightLimit(),0.00);
     }
 
 //    ------------------- IMPLEMENTATION STAGE 3 COMPLETE ---------------------
@@ -115,25 +115,25 @@ public class ParcelTest {
     @Test
     public void getParcelCostBySizeOverweightSmallParcel(){
         smallParcelOverweight.setParcelCostBySize(smallParcelOverweight.getLength(), smallParcelOverweight.getWidth(), smallParcelOverweight.getHeight());
-        assertEquals(5, smallParcelOverweight.getCost(), 0.01);
+        assertEquals(5, smallParcelOverweight.getCost(), 0.00);
     }
 
     @Test
     public void getParcelCostBySizeOverweightMediumParcel(){
         mediumParcelOverweight.setParcelCostBySize(mediumParcelOverweight.getLength(), mediumParcelOverweight.getWidth(), mediumParcelOverweight.getHeight());
-        assertEquals(12, mediumParcelOverweight.getCost(), 0.01);
+        assertEquals(12, mediumParcelOverweight.getCost(), 0.00);
     }
 
     @Test
     public void getParcelCostBySizeOverweightLargeParcel(){
         largeParcelOverweight.setParcelCostBySize(largeParcelOverweight.getLength(), largeParcelOverweight.getWidth(), largeParcelOverweight.getHeight());
-        assertEquals(19, largeParcelOverweight.getCost(), 0.01);
+        assertEquals(19, largeParcelOverweight.getCost(), 0.00);
     }
 
     @Test
     public void getParcelCostBySizeOverweightXLParcel(){
         XLParcelOverweight.setParcelCostBySize(XLParcelOverweight.getLength(), XLParcelOverweight.getWidth(), XLParcelOverweight.getHeight());
-        assertEquals(29, XLParcelOverweight.getCost(), 0.01);
+        assertEquals(29, XLParcelOverweight.getCost(), 0.00);
     }
 
     //    -------- IMPLEMENTATION STAGE 4 COMPLETE ----------
@@ -143,7 +143,7 @@ public class ParcelTest {
     @Test
     public void getParcelCostBySizeOverweightHeavyParcel(){
         heavyParcelOverweight.setParcelCostBySize(heavyParcelOverweight.getLength(), heavyParcelOverweight.getWidth(), heavyParcelOverweight.getHeight());
-        assertEquals(51, heavyParcelOverweight.getCost(), 0.01);
+        assertEquals(51, heavyParcelOverweight.getCost(), 0.00);
     }
 
 
