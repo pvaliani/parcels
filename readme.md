@@ -44,9 +44,13 @@ dimension only shipping costs. A new weight limit has been added for each parcel
 which a charge per kg of weight applies
 
 +$2/kg over weight limit for parcel size:
+
 ● Small parcel: 1kg
+
 ● Medium parcel: 3kg
+
 ● Large parcel: 6kg
+
 ● XL parcel: 10kg
 
 4) Some of the extra weight charges for certain goods were excessive. A new parcel type
