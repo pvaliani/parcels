@@ -9,18 +9,12 @@ calculate the cost of sending an order of parcels.
 
 - The API for the library should be programmatic. There is no need to implement a CLI,
 HTTP, or any other transport layer ✅ 
-
 - Try not to peek ahead at future steps and commit your working as you go ✅
-
 -  Input can be in any form you choose ✅
-
 -  Output should be a collection of items with their individual cost and type, as well as
 total cost ✅
-
 - In all circumstances the cheapest option for sending each parcel should be selected. ✅
-
 -  You are expected to use test driven development ✅
-
 - Take no longer than 2 hours! Do what you can and give us a rough outline of what
 further changes you might consider making.
 
