@@ -99,7 +99,7 @@ should remain the same as it was before ✅
 
 # Remarks On Implementation
 
-Rough outline of further changes I would consider making (based on what was not completed):
+Below is a rough outline of further changes I would consider making (based on which implementation stages are not yet completed).
 
 # Each parcel can only be used in a discount once
 The wording of this confused me. If this means that, for example, “small parcel mania” can be applied to the 4th small parcel ONCE (which is my interpretation) then one way could be to have a boolean set with the filter to when 4/4 = 1. I.e when there are multiple small parcel discounts there would be increasing multiples of 4. If the condition of 4/4 = 1 is met then the boolean could be inversely set in the discount method for each type. 
@@ -109,7 +109,7 @@ One way this could be achieved would be by sorting the parcels arraylist and fil
 
 # The combination of discounts which saves the most money should be selected every time
 
-This one is more challenging, I believe the parcel list may still need to be sorted, then to first check the overweight parcels and whether they are in the mixed mania discount and then work down to medium and then small parcel types. This is because the greatest savings on “free” parcels will be on heavier/overweight parcels or ones with a high unit cost. If a mixed mania discount ends up being a small parcel then the savings are not as high as a large parcel. I’d be open to discussing in the next stage.
+This one is more challenging, I believe the parcel list may still need to be sorted, then to first check the overweight parcels and whether they are in the mixed mania discount and then work down to medium and then small parcel types. This is because the greatest savings on “free” parcels will be on heavier/overweight parcels or ones with a high unit cost. If a mixed mania discount ends up being a small parcel then the savings are not as high as a large parcel. I’d be open to discussing in the next stage. Overall it may be best to have a class called Discount which separates the discount concerns further than individual methods and processes a mutable copied list of the order, in order to achieve the best discount option combination.
 
 # Other Remarks 
 - The exercise doesn’t explicitly ask for it, and I looked at it quite late as a result but in the displayOrderContents() method or otherwise, it would be more accurate to show the overweight charge alongside the individual parcel cost for user experience. I currently display the total savings as requested in the spec. The tests are correct programmatically and account for overweight charges but the console print of the parcels doesn’t currently display which parcel types are overweight ones. 
