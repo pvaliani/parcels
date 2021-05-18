@@ -201,9 +201,10 @@ public class OrderTest {
         assertEquals(9,  myOrder.smallParcelDiscount(),0.00);
     }
 
-    //  Tests that the medium parcel discount can be applied to an order
+
     @Test
     public void mediumParcelDiscountTest(){
+        //  Tests the overall value of the medium parcel discount to be deducted from the total cost
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(mediumParcel);
@@ -223,7 +224,7 @@ public class OrderTest {
 
     @Test
     public void mixedParcelDiscountTest(){
-        //  Tests the overall value of the medium parcel discount to be deducted from the total cost
+        //  Tests the overall value of the mixed parcel discount to be deducted from the total cost
         // 14 Parcels total - 4 small, 7 medium, 1 large, 1 XL
         myOrder.addParcelToOrder(mediumParcel);
         myOrder.addParcelToOrder(mediumParcel);
@@ -348,6 +349,7 @@ public class OrderTest {
 
     @Test
     public void calculateTotalCostWithMediumParcelDiscountMixedParcelsSpeedyShippingApplied(){
+        // Test calculates an order total consisting of mixed parcels for the medium parcel discount with speedy shipping applied
         myOrder.addParcelToOrder(smallParcel);
         myOrder.addParcelToOrder(largeParcel);
         myOrder.addParcelToOrder(largeParcel);
