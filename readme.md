@@ -1,6 +1,7 @@
-Courier Kata
+#Courier Kata
 You work for a courier company and have been tasked with creating a code library to
 calculate the cost of sending an order of parcels.
+
 ● The API for the library should be programmatic. There is no need to implement a CLI,
 HTTP, or any other transport layer
 ● Try not to peek ahead at future steps and commit your working as you go
