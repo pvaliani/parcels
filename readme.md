@@ -3,8 +3,8 @@
 You work for a courier company and have been tasked with creating a code library to
 calculate the cost of sending an order of parcels.
 
-✅ - Denotes implementation complete/attempted
-❌ - Denotes implementation not yet attempted/complete
+- ✅ - Denotes implementation complete/attempted
+- ❌ - Denotes implementation not yet attempted/complete
 
 
 ● The API for the library should be programmatic. There is no need to implement a CLI,
@@ -28,9 +28,13 @@ further changes you might consider making.
 
 1) The initial implementation just needs to take into account a parcel's size. For each size
 type there is a fixed delivery cost
+
 ● Small parcel: all dimensions < 10cm. Cost $3 ✅
+
 ● Medium parcel: all dimensions < 50cm. Cost $8 ✅
+
 ● Large parcel: all dimensions < 100cm. Cost $15 ✅
+
 ● XL parcel: any dimension >= 100cm. Cost $25 ✅
 
 2) Thanks to logistics improvements we can deliver parcels faster. This means we can
