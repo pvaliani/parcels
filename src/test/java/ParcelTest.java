@@ -32,7 +32,7 @@ public class ParcelTest {
 
     //  Test getters and setters for parcel properties
     @Test
-    public void getLength() {
+    public void canGetLength() {
         assertEquals(9,smallParcel.getLength(),0.00);
     }
 
@@ -66,37 +66,37 @@ public class ParcelTest {
     }
 
     @Test
-    public void getType() {
+    public void canGetType() {
         assertEquals(ParcelType.SMALL, smallParcel.getType());
     }
 
     @Test
-    public void setType() {
+    public void canSetType() {
         smallParcel.setType(ParcelType.SMALL);
         assertEquals(ParcelType.SMALL, smallParcel.getType());
 
     }
 
     @Test
-    public void getCost() {
+    public void canGetCost() {
         assertEquals(3, smallParcel.getCost() ,0.00);
     }
 
     @Test
-    public void setCost() {
+    public void canSetCost() {
         smallParcel.setCost(3);
         assertEquals(3, smallParcel.getCost(), 0.00);
     }
 
     // Test that a parcel can be costed based on its size and that its type is set accordingly
     @Test
-    public void getParcelCostBySize(){
+    public void canGetParcelCostBySize(){
         smallParcel.setParcelCostBySize(9,9,9);
         assertEquals(3, smallParcel.getCost(), 0.00);
     }
 
     @Test
-    public void getParcelTypeAfterCostedBySize(){
+    public void canGetParcelTypeAfterCostedBySize(){
         smallParcel.setParcelCostBySize(smallParcel.getLength(), smallParcel.getWidth(), smallParcel.getHeight());
         smallParcel.setParcelTypeByCost(25);
         assertEquals(ParcelType.XL, smallParcel.getType());
@@ -113,25 +113,25 @@ public class ParcelTest {
 
     // Tests that an overweight parcel can be costed based on its size
     @Test
-    public void getParcelCostBySizeOverweightSmallParcel(){
+    public void canGetParcelCostBySizeOverweightSmallParcel(){
         smallParcelOverweight.setParcelCostBySize(smallParcelOverweight.getLength(), smallParcelOverweight.getWidth(), smallParcelOverweight.getHeight());
         assertEquals(5, smallParcelOverweight.getCost(), 0.00);
     }
 
     @Test
-    public void getParcelCostBySizeOverweightMediumParcel(){
+    public void canGetParcelCostBySizeOverweightMediumParcel(){
         mediumParcelOverweight.setParcelCostBySize(mediumParcelOverweight.getLength(), mediumParcelOverweight.getWidth(), mediumParcelOverweight.getHeight());
         assertEquals(12, mediumParcelOverweight.getCost(), 0.00);
     }
 
     @Test
-    public void getParcelCostBySizeOverweightLargeParcel(){
+    public void canGetParcelCostBySizeOverweightLargeParcel(){
         largeParcelOverweight.setParcelCostBySize(largeParcelOverweight.getLength(), largeParcelOverweight.getWidth(), largeParcelOverweight.getHeight());
         assertEquals(19, largeParcelOverweight.getCost(), 0.00);
     }
 
     @Test
-    public void getParcelCostBySizeOverweightXLParcel(){
+    public void canGetParcelCostBySizeOverweightXLParcel(){
         XLParcelOverweight.setParcelCostBySize(XLParcelOverweight.getLength(), XLParcelOverweight.getWidth(), XLParcelOverweight.getHeight());
         assertEquals(29, XLParcelOverweight.getCost(), 0.00);
     }
@@ -141,7 +141,7 @@ public class ParcelTest {
 //  Test for a heavy parcel - currently this takes in the size dimensions but a future implementation
 //  would mean it shouldn't have to as the parcel is classed as heavy if it is over the 50kg weight limit irrespective of its dimensions
     @Test
-    public void getParcelCostBySizeOverweightHeavyParcel(){
+    public void canGetParcelCostBySizeOverweightHeavyParcel(){
         heavyParcelOverweight.setParcelCostBySize(heavyParcelOverweight.getLength(), heavyParcelOverweight.getWidth(), heavyParcelOverweight.getHeight());
         assertEquals(51, heavyParcelOverweight.getCost(), 0.00);
     }
