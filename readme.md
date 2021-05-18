@@ -1,10 +1,19 @@
 # Courier Kata - Exercise Brief and Highlight of Progress
 
-You work for a courier company and have been tasked with creating a code library to
-calculate the cost of sending an order of parcels.
+# Summary
+
+- I have completed implementations 1-4 and approx 50-60% of implementation 5
+- I prioritised testing over feature implementation which is partly why I wasn’t able to finish implementation 5
+- There is no UI/CLI - the application is purely TDD i.e when wanting to check the logic of the program each unit test as described should be run to confirm the behaviour of the app as per the specification
+- Unit test names are verbose to aid readability and optimise the number of code comments 
+- I did not fully understand the requirements/wording of implementation 5 with “Each parcel can only be used in a discount once” vs “ In all circumstances the cheapest option for sending each parcel should be selected.” Even with my best guess attempt I wasn’t able to make progress so decided to re-prioritise on testing existing features.
 
 - ✅ - Denotes implementation complete/attempted
 - ❌ - Denotes implementation not yet attempted/complete
+
+# Brief 
+You work for a courier company and have been tasked with creating a code library to
+calculate the cost of sending an order of parcels.
 
 - The API for the library should be programmatic. There is no need to implement a CLI,
 HTTP, or any other transport layer ✅ 
@@ -89,12 +98,6 @@ should remain the same as it was before ✅
 -  Speedy shipping applies after discounts are taken into account ✅
 
 # Remarks On Implementation
-
-- I have completed implementations 1-4 and approx 50-60% of implementation 5
-- I prioritised testing over feature implementation which is partly why I wasn’t able to finish implementation 5
-- There is no UI/CLI - the application is purely TDD i.e when wanting to check the logic of the program each unit test as described should be run to confirm the behaviour of the app as per the specification
-- Unit test names are verbose to aid readability and optimise the number of code comments 
-- I did not fully understand the requirements/wording of implementation 5 with “Each parcel can only be used in a discount once” vs “ In all circumstances the cheapest option for sending each parcel should be selected.” Even with my best guess attempt I wasn’t able to make progress so decided to re-prioritise on testing existing features.
 
 Rough outline of further changes I would consider making (based on what was not completed):
 
