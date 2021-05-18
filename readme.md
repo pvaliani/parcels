@@ -95,7 +95,7 @@ should remain the same as it was before ✅
 
 ● Speedy shipping applies after discounts are taken into account ✅
 
-# Remarks
+# Remarks On Implementation
 
 - I have completed implementations 1-4 and approx 50-60% of implementation 5
 - I prioritised testing over feature implementation which is partly why I wasn’t able to finish implementation 5
@@ -115,6 +115,7 @@ One way this could be achieved would be by sorting the parcels arraylist and fil
 
 This one is more challenging, I believe the parcel list may still need to be sorted, then to first check the overweight parcels and whether they are in the mixed mania discount and then work down to medium and then small parcel types. This is because the greatest savings on “free” parcels will be on heavier/overweight parcels or ones with a high unit cost. If a mixed mania discount ends up being a small parcel then the savings are not as high as a large parcel. I’d be open to discussing in the next stage.
 
+# Other Remarks 
 - The exercise doesn’t explicitly ask for it, and I looked at it quite late as a result but in the displayOrderContents() method or otherwise, it would be more accurate to show the overweight charge alongside the individual parcel cost for user experience. I currently display the total savings as requested in the spec. The tests are correct programmatically and account for overweight charges but the console print of the parcels doesn’t currently display which parcel types are overweight ones. 
 
 - I would refactor the setParcelCostBySize() method in the Parcel class to reduce the number of If statements but I can’t immediately think how I would do this. I noticed late in implementation that my calculation for a heavy parcel is possibly not correct as I had interpreted earlier on that a heavy parcel was one that was 50kg or above. Whereas I believe that in actuality there is a swing range below 50kg where a parcel should still be classed as heavy. I did not have time to implement corrections for this.
