@@ -8,8 +8,8 @@
 - Unit test names are verbose to aid readability and optimise the number of code comments 
 - I did not fully understand the requirements/wording of implementation 5 with “Each parcel can only be used in a discount once” vs “ In all circumstances the cheapest option for sending each parcel should be selected.” Even with my best guess attempt I wasn’t able to make progress so decided to re-prioritise on testing existing features.
 
-- ✅ - Denotes implementation complete/attempted
-- ❌ - Denotes implementation not yet attempted/complete
+✅ - Denotes implementation complete/attempted
+❌ - Denotes implementation not yet attempted/complete
 
 # Brief 
 You work for a courier company and have been tasked with creating a code library to
