@@ -118,7 +118,10 @@ public class Parcel {
         else if (cost <= 15){
             this.type = ParcelType.LARGE;
         }
-        else this.type = ParcelType.XL;
+        else if (cost <= 25){
+            this.type = ParcelType.XL;
+        }
+        else this.type = ParcelType.HEAVY;
     }
 
 //   ----------- IMPLEMENTATION STAGE 1 COMPLETE -----------
