@@ -24,7 +24,7 @@ total cost ✅
 - In all circumstances the cheapest option for sending each parcel should be selected. ✅
 -  You are expected to use test driven development ✅
 - Take no longer than 2 hours! Do what you can and give us a rough outline of what
-further changes you might consider making.
+further changes you might consider making. ✅
 
 # Implementation Steps
 
@@ -53,7 +53,7 @@ cost should remain the same as it was before ✅
 
 3) There have been complaints from delivery drivers that people are taking advantage of our
 dimension only shipping costs. A new weight limit has been added for each parcel type, over
-which a charge per kg of weight applies
+which a charge per kg of weight applies 
 
 +$2/kg over weight limit for parcel size:
 
