@@ -33,6 +33,7 @@ public class Order {
     }
 
 //  The overall cost of an order is returned as a sum depending on whether or not speedyShipping is selected
+//  Discounts are subtracted from the sum to produce the final sum once they have been calculated (if appropriate)
     public double calculateCostOfOrder(){
         double sum = this.parcels.stream()
                 .mapToDouble(parcel -> parcel.setParcelCostBySize(parcel.getLength(), parcel.getWidth(), parcel.getHeight()))
@@ -97,7 +98,7 @@ public class Order {
         return mediumParcelDiscount;
     }
 
-//  The mixed parcel discount implementation does not require a filter
+//  The mixed parcel discount implementation does not require a filter based on type
     public double mixedParcelDiscount(){
         double mixedParcelDiscount = IntStream.range(0, parcels.size())
                 .filter(n -> (n + 1) % 5 == 0) // every 5th parcel
