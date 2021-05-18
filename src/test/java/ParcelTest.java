@@ -30,7 +30,7 @@ public class ParcelTest {
         heavyParcelOverweight = new Parcel(100,100,100,ParcelType.HEAVY,50, 51);
     }
 
-//  Test getters and setters for parcel properties
+    //  Test getters and setters for parcel properties
     @Test
     public void getLength() {
         assertEquals(9,smallParcel.getLength(),0.01);
@@ -56,7 +56,7 @@ public class ParcelTest {
     @Test
     public void hasHeight() {
         assertEquals(9, smallParcel.getHeight(), 0.01);
-//
+
     }
 
     @Test
@@ -88,7 +88,7 @@ public class ParcelTest {
         assertEquals(3, smallParcel.getCost(), 0.01);
     }
 
-//  Test that a parcel can be costed based on its size and that its type is set accordingly
+    // Test that a parcel can be costed based on its size and that its type is set accordingly
     @Test
     public void getParcelCostBySize(){
         smallParcel.setParcelCostBySize(9,9,9);
@@ -111,8 +111,7 @@ public class ParcelTest {
 
 //    ------------------- IMPLEMENTATION STAGE 3 COMPLETE ---------------------
 
-// Tests that an overweight parcel can be costed based on its size
-
+    // Tests that an overweight parcel can be costed based on its size
     @Test
     public void getParcelCostBySizeOverweightSmallParcel(){
         smallParcelOverweight.setParcelCostBySize(smallParcelOverweight.getLength(), smallParcelOverweight.getWidth(), smallParcelOverweight.getHeight());
